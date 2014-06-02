@@ -35,7 +35,7 @@ def user_profile_delete(userid):
 def user_profile_create():
     if request.method == "POST":
         data_user = {'nombre':request.form["name"],
-                     'password':request.form["password"]}
+                     'edad':request.form["edad"]}
 
         uid = mongo.db.user.insert(data_user)
         return redirect(url_for('user_profile', userid=uid))
