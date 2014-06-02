@@ -1,0 +1,18 @@
+
+<form method="POST" action="">
+{% for ngrupo, grupo in data.grupos.iteritems() %}
+{{ ngrupo }} <br>
+<table>
+
+{% for npartido, partido in grupo.iteritems() %}
+
+{{ partido.A }} 
+<input size="3" type="text" name="{{ npartido }}-a" value={{ data.tarjeta.get(ngrupo).get(npartido).get('A') }}>
+ <input size="3" type="text" name="{{ npartido }}-b" value={{ data.tarjeta.get(ngrupo).get(npartido).get('B') }}> 
+{{ partido.B }}
+<br>
+{% endfor %}
+</table> <br>
+{% endfor %}
+<input  type="submit" value="go"> <br>
+</form>

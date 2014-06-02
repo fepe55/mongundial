@@ -1,0 +1,9 @@
+
+<a href={{ url_for("user_profile_create") }} > Agregar Usuario  </a><br>
+{% for user in users %}
+<a href="{{ user._id }}"> {{ user.nombre }}</a> 
+<a href={{ url_for("user_profile_edit", userid=user._id) }} > Editar  </a>
+<a href={{ url_for("user_profile_delete", userid=user._id) }} > Borrar  </a> 
+<br>
+
+{% endfor %}
